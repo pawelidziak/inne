@@ -10,7 +10,7 @@
     	
     	body {
     		font-family: 'Roboto', sans-serif;
-            font-size: 1.5rem;
+            font-size: 20px;
     	}
 
     	[data-tooltip]{
@@ -20,12 +20,26 @@
     	}
 
         /*tooltip*/
+        [data-tooltip]::after {
+            opacity: 0;
+        }
+        [data-tooltip]::before {
+            opacity: 0;
+        }
     	[data-tooltip]:hover::after {
+
+            height: 25px;
+            line-height: 25px;
+            font-size: 18px;
+
+            opacity: 1;
     		content: attr(data-tooltip);
     		position: absolute;
-    		bottom: 150%; 
+    		/*bottom: 150%; */
+            top: -55px; /*padding (16px) + height(25px) + triangle_height(14px)*/
     		/*125%*/
-    		transform: translateX(-65%);
+            left: 50%;
+    		transform: translateX(-50%);
     		background: #FF5722;
     		border-radius: 5px;
     		padding: 8px;
@@ -36,10 +50,12 @@
 
         /*triangle*/
     	[data-tooltip]:hover::before {
+            opacity: 1;
     		content: '';
     		position: absolute;
     		top: -14px;
-    		left: 15%;
+    		left: 50%;
+            transform: translateX(-50%);
     		border-top: 14px solid #FF5722;
     		border-right: 11px solid transparent;
     		border-left: 11px solid transparent;
@@ -58,7 +74,9 @@
 
 	<div class="content" style=" text-align: center;">
 
-		This is an awesome <span data-tooltip="It's so cool">tooltip</span>
+        This is an awesome <span data-tooltip="It's so cool">tooltip</span>
+        <br>
+        This is an awesome <span data-tooltip="It's so cool">tooltip dsa sadsa dasasdd </span>
 
 	</div>
 
