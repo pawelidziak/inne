@@ -20,24 +20,14 @@
     	}
 
         /*tooltip*/
-        [data-tooltip]::after {
-            opacity: 0;
-        }
-        [data-tooltip]::before {
-            opacity: 0;
-        }
     	[data-tooltip]:hover::after {
-
             height: 25px;
             line-height: 25px;
             font-size: 18px;
 
-            opacity: 1;
     		content: attr(data-tooltip);
     		position: absolute;
-    		/*bottom: 150%; */
             top: -55px; /*padding (16px) + height(25px) + triangle_height(14px)*/
-    		/*125%*/
             left: 50%;
     		transform: translateX(-50%);
     		background: #FF5722;
@@ -50,7 +40,6 @@
 
         /*triangle*/
     	[data-tooltip]:hover::before {
-            opacity: 1;
     		content: '';
     		position: absolute;
     		top: -14px;
@@ -66,17 +55,16 @@
             width: 400px;
             margin: auto;
             padding-top: 200px;
+            text-align: center;
         }
     </style>
 </head>
 
 <body>
 
-	<div class="content" style=" text-align: center;">
+	<div class="content">
 
         This is an awesome <span data-tooltip="It's so cool">tooltip</span>
-        <br>
-        This is an awesome <span data-tooltip="It's so cool">tooltip dsa sadsa dasasdd </span>
 
 	</div>
 
