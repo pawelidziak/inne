@@ -27,9 +27,9 @@ exports.damage = function(str) {
     let spellFounded = findSpells(subStrings, subSpells);
     spellFounded.sort(sortSpells);
 
-    let finalResult = calculate(subSpells, spellFounded)+3;
+    let damage = calculate(subSpells, spellFounded)+3; // +3 because of 'fe' and 'ai'
 
-    return finalResult > 0 ? finalResult : 0;
+    return damage > 0 ? damage : 0;
 }
 
 // metthod calculate final result
@@ -56,7 +56,7 @@ function calculate(str, array){
 
         // if newArray is empty
         if(newArray.length === 0){  
-            power += - newStr.length;   
+            power += -newStr.length;   
             return power; 
         } 
 
