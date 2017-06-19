@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CCFrontTask1 - Paweł Idziak</title>
+
+	<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <style type="text/css">
+    	
+    	body {
+    		font-family: 'Roboto', sans-serif;
+            font-size: 20px;
+    	}
+
+    	[data-tooltip]{
+    		border-bottom: 2px dotted red;
+    		position: relative;
+    		cursor: help;
+    	}
+
+        /*tooltip*/
+    	[data-tooltip]:hover::after {
+            height: 25px;
+            line-height: 25px;
+            font-size: 18px;
+
+    		content: attr(data-tooltip);
+    		position: absolute;
+            top: -55px; /*padding (16px) + height(25px) + triangle_height(14px)*/
+            left: 50%;
+    		transform: translateX(-50%);
+    		background: #FF5722;
+    		border-radius: 5px;
+    		padding: 8px;
+    		color: white;
+    		min-width: 224px;
+            text-align: left;
+    	}
+
+        /*triangle*/
+    	[data-tooltip]:hover::before {
+    		content: '';
+    		position: absolute;
+    		top: -14px;
+    		left: 50%;
+            transform: translateX(-50%);
+    		border-top: 14px solid #FF5722;
+    		border-right: 11px solid transparent;
+    		border-left: 11px solid transparent;
+    	}
+
+        /*need just for center content*/
+        .content {
+            width: 400px;
+            margin: auto;
+            padding-top: 200px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+	<div class="content">
+
+        This is an awesome <span data-tooltip="It's so cool">tooltip</span>
+
+	</div>
+
+</body>
+</html>
