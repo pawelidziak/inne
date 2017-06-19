@@ -32,7 +32,7 @@ exports.damage = function(str) {
     return damage > 0 ? damage : 0;
 }
 
-// metthod calculate final result
+// recursion method calculates final result
 function calculate(str, array){
     let max = 0, tmpMax = 0;
 
