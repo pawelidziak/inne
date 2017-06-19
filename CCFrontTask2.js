@@ -35,16 +35,12 @@ exports.damage = function(str) {
 // recursion method calculates final result
 function calculate(str, array){
     let max = 0, tmpMax = 0;
-
-
     let newArray = array.slice(0);
-
     let newStr = str;
 
     for(let i = 0; i<newArray.length; i++){
-        
         let power = 0;
-
+        
         // if newStr includes spell then add power and cut string
         if(newStr.includes(newArray[i].spell)){
             power += newArray[i].power;
